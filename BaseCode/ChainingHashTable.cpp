@@ -37,6 +37,27 @@ int ChainingHashTable::Search(int const key) const
     return KEY_NOT_FOUND;
 }
 
+list<int> ChainingHashTable::Historical_Search(int const key) const
+{
+    int idx = hash(key);
+    list<int> search_history;
+    search_history.push_back(idx);
+
+    if(!store[idx].empty())
+    {
+        for(list<int>::const_iterator it = store[idx].begin();
+                it != store[idx].end();
+                ++it)
+        {
+            search_history.push_back(*it);
+            if(*it == key)
+                break;
+        }
+    }
+    return search_history;
+
+}
+
 void ChainingHashTable::Insert(int const key)
 {
     int idx = hash(key);

@@ -21,6 +21,7 @@ public:
     static ChainingHashTable::Ptr construct();
     virtual ~ChainingHashTable();
     virtual int Search(int const key) const;
+    virtual list<int> Historical_Search(int const key) const;
     virtual void Insert(int const key);
 private:
     ChainingHashTable();

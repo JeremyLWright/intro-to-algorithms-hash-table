@@ -9,7 +9,9 @@
 #define IHASHTABLE_40F5FBPD
 
 #include <tr1/memory>
+#include <list>
 
+using std::list;
 class IHashTable
 {
 public:
@@ -17,6 +19,7 @@ public:
     enum { KEY_NOT_FOUND = -1};
     virtual int Search(int const key) const = 0;
     virtual void Insert(int const key) = 0;
+    virtual list<int> Historical_Search(int const key) const = 0;
 };
 
 
