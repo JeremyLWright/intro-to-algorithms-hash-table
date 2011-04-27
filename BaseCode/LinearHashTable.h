@@ -33,7 +33,7 @@ private:
     inline int hash(int const key, int const iteration) const;
     int const m;
     double const A;
-    list<int>* store;
+    int* store;
     
 };
 

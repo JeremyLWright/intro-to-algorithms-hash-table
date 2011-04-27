@@ -55,9 +55,8 @@ TEST(ChainingHashTable, SampleInput1)
     int search_key = search_keys[0];
     int expected_search_history[] = {0, 23, 134895};
 
-    list<int> sample_input(sample_input_1, sample_input_1 + sizeof(sample_input_1) / sizeof(int));
 
-    Verify_Sample_Data(sample_input, search_key, expected_search_history,3);
+    Verify_Sample_Data(sample_input_1, search_key, expected_search_history,3);
 }
 
 
@@ -66,9 +65,8 @@ TEST(ChainingHashTable, SampleInput2)
     int search_key = search_keys[1];
     int expected_search_history[] = {3, 101461306};
 
-    list<int> sample_input(sample_input_2, sample_input_2 + sizeof(sample_input_2) / sizeof(int));
 
-    Verify_Sample_Data(sample_input, search_key, expected_search_history,2);
+    Verify_Sample_Data(sample_input_2, search_key, expected_search_history,2);
 }
 
 TEST(ChainingHashTable, SampleInput3)
@@ -76,18 +74,16 @@ TEST(ChainingHashTable, SampleInput3)
     int search_key = search_keys[2];
     int expected_search_history[] = {9, 1729907105, 394378916, 1097825820, 2107360220};
 
-    list<int> sample_input(sample_input_3, sample_input_3 + sizeof(sample_input_3) / sizeof(int));
 
-    Verify_Sample_Data(sample_input, search_key, expected_search_history,5);
+    Verify_Sample_Data(sample_input_3, search_key, expected_search_history,5);
 }
 TEST(ChainingHashTable, SampleInput4)
 {
     int search_key = search_keys[3];
     int expected_search_history[] = {6, 395785938 };
 
-    list<int> sample_input(sample_input_4, sample_input_4 + sizeof(sample_input_4) / sizeof(int));
 
-    Verify_Sample_Data(sample_input, search_key, expected_search_history,2);
+    Verify_Sample_Data(sample_input_4, search_key, expected_search_history,2);
 }
 
 
@@ -96,7 +92,6 @@ TEST(ChainingHashTable, SampleInput5)
     int search_key = search_keys[4];
     int expected_search_history[] = {22 };
 
-    list<int> sample_input(sample_input_5, sample_input_5 + sizeof(sample_input_5) / sizeof(int));
 
-    Verify_Sample_Data(sample_input, search_key, expected_search_history,1);
+    Verify_Sample_Data(sample_input_5, search_key, expected_search_history,1);
 }
