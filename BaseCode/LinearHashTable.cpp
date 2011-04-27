@@ -61,7 +61,7 @@ void LinearHashTable::Insert(int const key)
         if(store[idx] == KEY_NOT_FOUND)
         {
             store[idx] = key;
-            break;
+            return;
         }
 
     }

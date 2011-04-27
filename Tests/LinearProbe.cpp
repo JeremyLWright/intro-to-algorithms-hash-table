@@ -9,13 +9,16 @@ using namespace std;
 void Verify_Sample_Data_Linear(list<int> sample_input, int search_key, int expected_search_history[], int expected_history_size)
 {
     LinearHashTable::Ptr ht = LinearHashTable::construct();
+    int inserts = 1;
     for(list<int>::const_iterator it = sample_input.begin();
             it != sample_input.end();
             ++it)
     {
         ht->Insert(*it);
+        inserts++;
     }
-    
+
+    cout << "Inserted: " << inserts << endl;
     list<int> history = ht->Historical_Search(search_key);
     EXPECT_EQ(expected_history_size, history.size()); 
     int i = 0;

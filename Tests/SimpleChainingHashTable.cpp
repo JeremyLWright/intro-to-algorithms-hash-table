@@ -46,7 +46,7 @@ void Verify_Sample_Data(list<int> sample_input, int search_key, int expected_sea
     {
         EXPECT_EQ(expected_search_history[i], *itt);   
     }
-    cout << ht->ToString();
+//    cout << ht->ToString();
 }
 
 
