@@ -27,20 +27,10 @@ TEST(ChainingHashTable, EmptySearch)
     }
 }
 
-TEST(ChainingHashTable, SampleInput1)
+
+void Verify_Sample_Data(list<int> sample_input, int search_key, int expected_search_history[], int expected_history_size)
 {
-    int sample_input_array[] = {47,     26,     12,     4821,   83621, 
-                                18936,  299,    9248,   534,    2147000000,
-                                3917,   134895, 187462, 9291,   1846,
-                                1872,   93,     23,     52,     91,
-                                16,     15,     14,     13,     11};
-
-    list<int> sample_input(sample_input_array, sample_input_array + sizeof(sample_input_array) / sizeof(int));
-    int search_key = 134895;
-    int expected_search_history[] = {0, 23, 134895};
-
     ChainingHashTable::Ptr ht = ChainingHashTable::construct();
-
     for(list<int>::const_iterator it = sample_input.begin();
             it != sample_input.end();
             ++it)
@@ -49,9 +39,54 @@ TEST(ChainingHashTable, SampleInput1)
     }
     
     list<int> history = ht->Historical_Search(search_key);
+    EXPECT_EQ(expected_history_size, history.size()); 
     int i = 0;
-    for(list<int>::const_iterator itt = history.begin(); i < 3; ++i, ++itt)
+    for(list<int>::const_iterator itt = history.begin(); i < expected_history_size; ++i, ++itt)
     {
         EXPECT_EQ(expected_search_history[i], *itt);   
     }
+
+}
+
+
+TEST(ChainingHashTable, SampleInput1)
+{
+    int sample_input_array[] = {47,     26,     12,     4821,   83621, 
+                                18936,  299,    9248,   534,    2147000000,
+                                3917,   134895, 187462, 9291,   1846,
+                                1872,   93,     23,     52,     91,
+                                16,     15,     14,     13,     11};
+
+    int search_key = 134895;
+    int expected_search_history[] = {0, 23, 134895};
+
+    list<int> sample_input(sample_input_array, sample_input_array + sizeof(sample_input_array) / sizeof(int));
+
+    Verify_Sample_Data(sample_input, search_key, expected_search_history,3);
+}
+
+
+TEST(ChainingHashTable, SampleInput2)
+{
+    int sample_input_array[] = {1055625865, 1827521410, 1977619123,
+        1650412955, 1937168335, 1955138489, 2092492158, 1567160789, 329568782, 70971576, 299752405, 373677453, 1583791118, 738544302, 1882326005, 57417584, 1659105294, 900128927, 1484464552, 397005233, 1347156295, 188169811, 802112425, 716616484, 2029486611, 1353697904, 172080037, 101461306, 715437487, 1313503011, 1502035504};
+
+    int search_key = 101461306;
+    int expected_search_history[] = {3, 101461306};
+
+    list<int> sample_input(sample_input_array, sample_input_array + sizeof(sample_input_array) / sizeof(int));
+
+    Verify_Sample_Data(sample_input, search_key, expected_search_history,2);
+}
+
+TEST(ChainingHashTable, SampleInput3)
+{
+    int sample_input_array[] = {
+        2107360220, 297908229, 1081543086, 433401115, 882843345, 687824101, 525742027, 10064633, 83736013, 1097825820, 313753780, 729637484, 602079651, 721523951, 1058056381, 1618499637, 1135935939, 943020467, 395312291, 749298670, 1732953728, 759295658, 1899141334, 394378916, 1729907105, 973336498, 705231947, 1715785415, 346724033, 845245135, 1141098044 }; 
+    int search_key = 55;
+    int expected_search_history[] = {9, 1729907105, 394378916, 1097825820, 2107360220};
+
+    list<int> sample_input(sample_input_array, sample_input_array + sizeof(sample_input_array) / sizeof(int));
+
+    Verify_Sample_Data(sample_input, search_key, expected_search_history,5);
 }
