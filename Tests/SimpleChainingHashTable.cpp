@@ -103,3 +103,14 @@ TEST(ChainingHashTable, SampleInput4)
 }
 
 
+TEST(ChainingHashTable, SampleInput5)
+{
+int sample_input_array[] = {1962693967, 713165933, 693248494, 19541522, 1702771723, 1237175230, 187583188, 1524298814, 1802892232, 1223043887, 876411269, 1916415478, 966936986, 244019012, 302167476, 936102404, 1819180188, 1324520137, 14771722, 1928878936, 1434332448, 589857889, 2488186, 1130970392, 1392526419, 905701793, 1793206205, 1004085405, 2105823850, 1301399529, 984445944, 1921034168};
+
+    int search_key = 873;
+    int expected_search_history[] = {22 };
+
+    list<int> sample_input(sample_input_array, sample_input_array + sizeof(sample_input_array) / sizeof(int));
+
+    Verify_Sample_Data(sample_input, search_key, expected_search_history,1);
+}
