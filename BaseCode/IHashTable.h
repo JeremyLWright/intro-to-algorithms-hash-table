@@ -10,8 +10,9 @@
 
 #include <tr1/memory>
 #include <list>
-
+#include <string>
 using std::list;
+using std::string;
 class IHashTable
 {
 public:
@@ -20,6 +21,7 @@ public:
     virtual int Search(int const key) const = 0;
     virtual void Insert(int const key) = 0;
     virtual list<int> Historical_Search(int const key) const = 0;
+    virtual string ToString() const = 0;
 };
 
 

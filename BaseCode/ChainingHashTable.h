@@ -13,6 +13,7 @@
 #include <list>
 
 using std::list;
+using std::string;
 class ChainingHashTable: public IHashTable
 {
 public:
@@ -23,6 +24,7 @@ public:
     virtual int Search(int const key) const;
     virtual list<int> Historical_Search(int const key) const;
     virtual void Insert(int const key);
+    virtual string ToString() const;
 private:
     ChainingHashTable();
     ChainingHashTable::WeakPtr self;

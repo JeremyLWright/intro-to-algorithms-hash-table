@@ -1,5 +1,7 @@
 #include "ChainingHashTable.h"
-
+#include <sstream>
+using std::endl;
+using std::stringstream;
 
 ChainingHashTable::Ptr ChainingHashTable::construct()
 {
@@ -58,6 +60,24 @@ list<int> ChainingHashTable::Historical_Search(int const key) const
 
 }
 
+string ChainingHashTable::ToString() const
+{
+    stringstream table_dump;
+    for(int i = 0; i < m; ++i)
+    {
+        table_dump << i << '\t';
+        for(list<int>::const_iterator it = store[i].begin();
+                it != store[i].end();
+                ++it)
+        {
+            table_dump << *it << " ";
+        }
+        table_dump << endl;
+    }
+    table_dump << -1 << endl;
+    return table_dump.str();
+
+}
 void ChainingHashTable::Insert(int const key)
 {
     int idx = hash(key);
