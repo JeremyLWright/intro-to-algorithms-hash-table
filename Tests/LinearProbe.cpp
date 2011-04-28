@@ -18,7 +18,6 @@ void Verify_Sample_Data_Linear(list<int> sample_input, int search_key, int expec
         inserts++;
     }
 
-    cout << "Inserted: " << inserts << endl;
     list<int> history = ht->Historical_Search(search_key);
     EXPECT_EQ(expected_history_size, history.size()); 
     int i = 0;
@@ -26,7 +25,7 @@ void Verify_Sample_Data_Linear(list<int> sample_input, int search_key, int expec
     {
         EXPECT_EQ(expected_search_history[i], *itt);   
     }
-    cout << ht->ToString();
+   // cout << ht->ToString();
 }
 
 

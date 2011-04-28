@@ -48,9 +48,12 @@ list<int> LinearHashTable::Historical_Search(int const key) const
     {
         int idx = hash(key, i);
         search_history.push_back(idx);
+        if(store[idx] == KEY_NOT_FOUND)
+            break;
         if(store[idx] == key)
             return search_history;
     }
+    search_history.push_back(-1);
     return search_history;
 }
 
