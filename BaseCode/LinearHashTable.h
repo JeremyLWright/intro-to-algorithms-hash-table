@@ -10,10 +10,6 @@
 
 #include <tr1/memory>
 #include "OpenAddress.h"
-#include <list>
-
-using std::list;
-using std::string;
 
 class LinearHashTable : public OpenAddress
 {
@@ -27,7 +23,6 @@ public:
 private:
     LinearHashTable();
     LinearHashTable::WeakPtr self;
-    int const m;
     double const A;
 };
 

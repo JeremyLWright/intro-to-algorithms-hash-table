@@ -7,11 +7,6 @@
  */
 #include "LinearHashTable.h"
 #include <cmath>
-#include <sstream>
-#include <cassert>
-
-using std::endl;
-using std::stringstream;
 
 LinearHashTable::Ptr LinearHashTable::construct()
 {
@@ -22,7 +17,6 @@ LinearHashTable::Ptr LinearHashTable::construct()
 
 LinearHashTable::LinearHashTable():
     OpenAddress(32),
-    m(32),
     A(0.618)
 {
 }
