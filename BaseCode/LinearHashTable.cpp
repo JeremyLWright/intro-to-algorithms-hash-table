@@ -8,6 +8,7 @@
 #include "LinearHashTable.h"
 #include <cmath>
 #include <sstream>
+#include <cassert>
 
 using std::endl;
 using std::stringstream;
@@ -58,6 +59,7 @@ void LinearHashTable::Insert(int const key)
     for(int i = 0; i < m ; ++i)
     {
         int idx = hash(key, i);
+        assert(idx < m);
         if(store[idx] == KEY_NOT_FOUND)
         {
             store[idx] = key;
@@ -86,6 +88,6 @@ inline int LinearHashTable::h_prime(int const key) const
 
 inline int LinearHashTable::hash(int const key, int const iteration) const
 {
-    return h_prime(key)+iteration;
+    return ((h_prime(key)+iteration)%m);
 }
 
