@@ -1,0 +1,12 @@
+Jeremy Wright
+CSE 310
+Homework #9
+
+To Build:
+$ ./b.sh 
+This produces the main executable: main
+
+To Run:
+$ ./main test0.in
+This stores test0.in and outputs: linear.txt quadratic.txt double.txt chain.txt
+
